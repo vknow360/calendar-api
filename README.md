@@ -129,10 +129,10 @@ GET /api/v1/calendar?course=Btech&session=2024-2028
 ```json
 {
   "_id": "...",
-  "course": "computer-science",
+  "course": "Btech",
   "sessions": {
-    "2024-spring": "https://calendar.example.com/cs-2024-spring",
-    "2024-fall": "https://calendar.example.com/cs-2024-fall"
+    "2024-2028": "https://calendar.example.com/cs-2024-spring",
+    "2025-2029": "https://calendar.example.com/cs-2024-fall"
   }
 }
 ```
@@ -181,10 +181,10 @@ To add calendar data to your database, you can use MongoDB Compass or the MongoD
 ```javascript
 // Connect to your database and insert sample data
 db.calendars.insertOne({
-  course: "computer-science",
+  course: "MTech",
   sessions: {
-    "2024-spring": "https://calendar.example.com/cs-2024-spring",
-    "2024-fall": "https://calendar.example.com/cs-2024-fall"
+    "2024-2026": "https://calendar.example.com/cs-2024-spring",
+    "2025-2027": "https://calendar.example.com/cs-2024-fall"
   }
 });
 ```
