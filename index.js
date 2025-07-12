@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/', async (req,res) => {
+app.get('/', (req,res) => {
     res.status(200).json({ status: 'OK' });
 });
 
