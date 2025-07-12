@@ -13,6 +13,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/', async (req,res) => {
+    res.status(200).json({ status: 'OK' });
+});
+
 app.use('/api/v1/calendar', calendarRoutes);
 
 db.connect();
