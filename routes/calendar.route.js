@@ -36,9 +36,9 @@ router.get("/", async (req, res) => {
 
 router.post("/upload", upload.single("file"), async (req, res) => {
   try {
-    const batch = req.body.course;
+    const course = req.body.course;
     const session = req.body.session;
-    console.log("Batch:", batch);
+    console.log("Course:", course);
     console.log("Session:", session);
     const fileName = req.file.originalname;
 
@@ -58,13 +58,13 @@ router.post("/upload", upload.single("file"), async (req, res) => {
       });
     }
     const fileUrl = response.data.previewUrl;
-    const existingRecord = await Calendar.findOne({ course: batch });
+    const existingRecord = await Calendar.findOne({ course: course });
     if (existingRecord) {
       existingRecord.sessions.set(session, fileUrl);
       await existingRecord.save();
     } else {
       const newRecord = new Calendar({
-        course: batch,
+        course: course,
         sessions: new Map([[session, fileUrl]]),
       });
       await newRecord.save();

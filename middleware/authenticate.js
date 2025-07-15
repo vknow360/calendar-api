@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const isAdmin = function (req, res, next) {
   verifyToken(req, res, () => {
-    if (req.user && req.user.isAdmin) {
+    if (req.user && (req.user.team || req.user.isResoSuperAdmin || req.user.isResoSocietyAdmin)) {
       next();
     } else {
       return res.status(403).json({
