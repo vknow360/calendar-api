@@ -271,10 +271,6 @@ curl -X POST \
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
-
-This project is licensed under the ISC License.
-
 ## Support
 
 If you have any questions or need help, please open an issue on GitHub.
